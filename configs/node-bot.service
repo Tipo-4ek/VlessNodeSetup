@@ -1,0 +1,22 @@
+[Unit]
+Description=VlessNodeSetup Telegram bot and subscription endpoint
+After=network-online.target vless-node-xray.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=vlessnode
+Group=vlessnode
+EnvironmentFile=/etc/vless-node-setup/node.env
+WorkingDirectory=/opt/vless-node-setup
+ExecStart=/usr/bin/python3 /opt/vless-node-setup/scripts/node_bot.py
+Restart=always
+RestartSec=5
+UMask=0077
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ReadWritePaths=/var/lib/vless-node-setup /etc/vless-node-setup
+
+[Install]
+WantedBy=multi-user.target

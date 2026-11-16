@@ -1,0 +1,24 @@
+# Local configuration and credentials
+.env
+.env.*
+*.env
+!.env.example
+!*.env.example
+secrets/
+*.key
+*.pem
+*token*
+!*token*.example
+users.json
+xray.json
+node.env
+
+# Python and editor output
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+.idea/
+.vscode/
+*.log
+.DS_Store

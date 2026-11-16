@@ -1,0 +1,1 @@
+vlessnode ALL=(root) NOPASSWD: /usr/bin/systemctl restart vless-node-xray
